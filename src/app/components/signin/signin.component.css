@@ -1,0 +1,172 @@
+/* Main container styling */
+.signin-container {
+  margin-top: 200px; /* Increased margin-top */
+  margin-bottom: 50px;
+  background-color: #eec3c395; /* Soft Pink background (lighter shade) */
+  background-image: url('../../../assets/blur2.jpg'); /* Add your image path here */
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-position: center; /* Centers the image */
+  background-attachment: fixed; /* Keeps the background fixed while scrolling */
+  border-radius: 12px; /* Rounded corners for the container */
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Heading style */
+h2 {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 26px;
+  color: #1A3D5C; /* Dark Blue */
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Styling for form elements */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label styling */
+label {
+  font-size: 14px;
+  color: #7585A1; /* Muted Blue */
+  margin-bottom: 5px;
+}
+
+/* Input fields styling with border-radius */
+input {
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ABBAC9; /* Light Grayish Blue */
+  border-radius: 8px; /* Rounded corners for inputs */
+  font-size: 14px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+input:focus {
+  border-color: #C28285; /* Warm Pink */
+  box-shadow: 0 0 8px rgba(194, 130, 133, 0.5);
+  transform: scale(1.02);
+}
+
+/* Button styling */
+button {
+  background-color: #1A3D5C; /* Dark Blue */
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px; /* Rounded corners for button */
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #9B4D42; /* Rusty Red */
+  transform: scale(1.05);
+}
+
+/* Links and text styling */
+p {
+  font-size: 14px;
+  text-align: center;
+  color: #7585A1; /* Muted Blue */
+}
+
+a {
+  color: #1A3D5C; /* Dark Blue */
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+a:hover {
+  color: #9B4D42; /* Rusty Red */
+  transform: scale(1.05);
+}
+
+/* Reset Password Link */
+.reset-password-link {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+/* OAuth Buttons Styling */
+.oauth-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.oauth-buttons a {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 8px; /* Rounded corners for OAuth buttons */
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  gap: 10px; /* Space between icon and text */
+}
+
+.btn-google {
+  background-color: #C28285; /* Warm Pink */
+}
+
+.btn-google:hover {
+  background-color: #9B4D42; /* Rusty Red */
+  transform: scale(1.05);
+}
+
+.btn-facebook {
+  background-color: #1A3D5C; /* Dark Blue */
+}
+
+.btn-facebook:hover {
+  background-color: #7585A1; /* Muted Blue */
+  transform: scale(1.05);
+}
+
+/* Icon size */
+.oauth-buttons i {
+  font-size: 18px;
+}
+
+/* Error message styling */
+.error-message {
+  color: #e74c3c;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* Welcome Message */
+.welcome-message {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1A3D5C; /* Dark Blue */
+  text-align: center;
+  margin-bottom: 30px;
+  animation: fadeIn 1s ease-in-out;
+}

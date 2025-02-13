@@ -1,0 +1,407 @@
+:root {
+  --primary-green: hsl(138, 38%, 31%);
+  --light-yellow: hsla(55, 100%, 84%, 0.96);
+  --light-pink: hsla(305, 100%, 81%, 0.942);
+  --dark-brown: hsl(20, 13%, 30%);
+  --light-orange: hsl(42, 98%, 70%);
+  --golden-yellow: hsl(42, 92%, 63%);
+  --bright-pink: hsl(342, 100%, 61%);
+  --peach: hsl(19, 89%, 76%);
+  --soft-blue: hsl(203, 43%, 58%);
+  --dark-blue: hsl(226, 54%, 38%);
+  --pale-green: hsl(72, 89%, 79%);
+  --deep-red: hsl(355, 78%, 50%);
+  --mint-green: hsl(160, 50%, 75%);
+  --warm-gray: hsl(30, 10%, 85%);
+  --charcoal: hsl(210, 10%, 23%);
+  --off-white: hsl(40, 20%, 96%);
+  --gradient: linear-gradient(90deg, var(--light-yellow) 0%, var(--light-pink) 100%);
+  --section-padding: 60px;
+  --radius-4: 4px;
+  --radius-6: 6px;
+  --shadow-2: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-3: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-4: 0 6px 12px rgba(0, 0, 0, 0.1);
+  --transition: 0.3s ease;
+}
+
+.container {
+  background-image: url("../../../assets/blur.jpg");
+  margin-top: 200px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  padding: var(--section-padding);
+  font-family: 'Arial', sans-serif;
+  background-color: var(--off-white);
+  text-align: center;
+}
+
+
+h1, h2 {
+  text-align: center;
+  color: var(--dark-blue);
+  font-size: var(--fs-2);
+  font-weight: var(--fw-800);
+  margin-block: 15px 30px;
+  margin-top: 10px;
+}
+
+h4 {
+  color: var(--dark-blue);
+  font-size: var(--fs-5);
+  margin-block-end: 10px;
+}
+
+.ingredient-section, .recipe-section {
+  margin-bottom: 30px;
+}
+
+.ingredient-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.ingredient-card {
+  border: 1px solid var(--warm-gray);
+  border-radius: var(--radius-6);
+  padding: 25px;
+  text-align: center;
+  background-color: var(--off-white);
+  transition: var(--transition);
+  box-shadow: var(--shadow-2);
+}
+
+.ingredient-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-4);
+}
+
+.ingredient-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: var(--radius-6);
+}
+/* Container for the ingredient list */
+.ingredient-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* Style for each ingredient item */
+.ingredient-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: var(--off-white);
+  border-radius: var(--radius-6);
+  box-shadow: var(--shadow-2);
+  transition: var(--transition);
+}
+
+.ingredient-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-4);
+}
+
+/* Hide the default checkbox */
+.ingredient-item input[type="checkbox"] {
+  display: none;
+}
+
+/* Custom checkbox design */
+.ingredient-item label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--charcoal);
+}
+
+.ingredient-item label::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 2px solid var(--primary-green);
+  border-radius: var(--radius-4);
+  background-color: var(--off-white);
+  transition: var(--transition);
+}
+
+/* Checked state */
+.ingredient-item input[type="checkbox"]:checked + label::before {
+  background-color: var(--primary-green);
+  border-color: var(--primary-green);
+}
+
+/* Checkmark icon */
+.ingredient-item input[type="checkbox"]:checked + label::after {
+  content: '✔';
+  position: absolute;
+  left: 5px;
+  color: var(--off-white);
+  font-size: 14px;
+  transition: var(--transition);
+}
+
+/* Hover effect for the checkbox */
+.ingredient-item label:hover::before {
+  border-color: var(--dark-blue);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Optional: Add a ripple effect on click */
+.ingredient-item label:active::before {
+  transform: scale(0.9);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--charcoal);
+}
+
+select, button {
+  width: 100%;
+  padding: 10px;
+  border-radius: var(--radius-4);
+  border: 1px solid var(--warm-gray);
+  font-size: 16px;
+  background-color: var(--off-white);
+  color: var(--charcoal);
+}
+
+button {
+  background-image: var(--gradient);
+  color: var(--charcoal);
+  font-weight: var(--fw-600);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+button:hover {
+  background-image: linear-gradient(90deg, var(--light-pink) 0%, var(--light-yellow) 100%);
+  transform: translateY(-2px);
+}
+
+.recipe-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card-container {
+  width: 300px; /* Fixed width for all cards */
+  position: relative;
+}
+
+.card {
+  background-color: var(--off-white);
+  padding: 20px;
+  border-radius: var(--radius-6);
+  box-shadow: var(--shadow-2);
+  transition: var(--transition);
+  cursor: pointer;
+  height: 400px; /* Fixed height for all cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure content is spaced evenly */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-4);
+}
+
+.card-body {
+  text-align: left;
+  flex-grow: 1; /* Allow the body to grow and fill available space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space out title, description, and read more */
+}
+
+.card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--dark-blue);
+  margin: 0 0 10px;
+}
+
+.card-description {
+  font-size: 14px;
+  color: var(--charcoal);
+  margin: 0 0 10px;
+  flex-grow: 1; /* Allow description to take up remaining space */
+}
+
+.card-read {
+  color: var(--dark-blue);
+  font-weight: bold;
+  cursor: pointer;
+  text-align: right;
+}
+
+.card-media {
+  width: 100%;
+  height: 150px; /* Fixed height for images */
+  object-fit: cover; /* Ensure images cover the area without distortion */
+  border-radius: var(--radius-6);
+  margin-bottom: 10px;
+}
+
+.recipe-details {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 800px;
+  background-color: var(--off-white);
+  background-image: url('../../../assets/blur2.jpg'); /* Add background image */
+  background-size: cover; /* Ensure the background image covers the entire popup */
+  background-position: center; /* Center the background image */
+  padding: 20px;
+  border-radius: var(--radius-6);
+  box-shadow: var(--shadow-4);
+  z-index: 1001; /* Ensure it's on top of everything */
+  display: none;
+  grid-template-rows: auto auto 1fr auto; /* Define rows for title, image, ingredients, and instructions */
+  gap: 20px;
+}
+
+.recipe-details.active {
+  display: grid;
+}
+
+/* Title */
+.recipe-details h3 {
+  color: var(--dark-blue);
+  margin-top: 0;
+  text-align: center; /* Center the title */
+  font-size: 2rem; /* Larger font size for the title */
+  font-weight: bold; /* Bold title */
+}
+
+/* Image */
+.recipe-details img {
+  width: 100%;
+  max-height: 300px; /* Limit image height */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+  border-radius: var(--radius-6);
+  border: 5px solid var(--warm-gray); /* Add a frame around the image */
+  box-shadow: var(--shadow-3); /* Add a subtle shadow */
+}
+
+/* Ingredients */
+.recipe-details .ingredients {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid for ingredients */
+  gap: 10px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for ingredients */
+  border-radius: var(--radius-6);
+  box-shadow: var(--shadow-2); /* Add a subtle shadow */
+}
+
+.recipe-details .ingredients h4 {
+  grid-column: 1 / -1; /* Span the heading across all columns */
+  color: var(--dark-blue);
+  margin: 0 0 10px;
+  font-size: 1.5rem; /* Larger font size for the heading */
+}
+
+.recipe-details .ingredients ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recipe-details .ingredients ul li {
+  margin: 5px 0;
+  color: var(--charcoal);
+  font-size: 1rem;
+  padding: 5px 10px;
+  background-color: var(--warm-gray);
+  border-radius: var(--radius-4);
+  text-align: center; /* Center ingredient names */
+}
+
+/* Instructions */
+.recipe-details .instructions {
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for instructions */
+  border-radius: var(--radius-6);
+  box-shadow: var(--shadow-2); /* Add a subtle shadow */
+}
+
+.recipe-details .instructions h4 {
+  color: var(--dark-blue);
+  margin: 0 0 10px;
+  font-size: 1.5rem; /* Larger font size for the heading */
+}
+
+.recipe-details .instructions p {
+  color: var(--charcoal);
+  line-height: 1.6;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Close Button */
+.recipe-details button {
+  grid-column: span 2;
+  background-image: var(--gradient);
+  color: var(--charcoal);
+  cursor: pointer;
+  transition: var(--transition);
+  padding: 10px;
+  border: none;
+  border-radius: var(--radius-4);
+  font-size: 16px;
+  margin: 0 auto; /* Center the button */
+  display: block; /* Ensure the button takes full width */
+}
+
+.recipe-details button:hover {
+  background-image: linear-gradient(90deg, var(--light-pink) 0%, var(--light-yellow) 100%);
+  transform: translateY(-2px);
+}
+
+.overlay {
+  margin-top: 3000px;
+  position: absolute; /* Cover the entire parent component */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px); /* Blur the background */
+  z-index: 1000; /* Ensure it's below the popup but above everything else */
+  display: none;
+}
+
+.overlay.active {
+  display: block;
+}
+
+.recipegen-container.blurred {
+  backdrop-filter: blur(5px); /* Blur the main container */
+  pointer-events: none; /* Prevent interaction with blurred content */
+}
+
+.recipegen-container {
+  transition: backdrop-filter 0.3s ease;
+}

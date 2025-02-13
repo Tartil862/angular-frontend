@@ -1,0 +1,111 @@
+/* Main container for the user list */
+.user-list {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  color: white;
+  width: 100%;
+}
+
+/* Title of the user list */
+.user-list h2 {
+  font-size: 36px;
+  text-align: center;
+  color: var(--dark-blue);
+  margin-bottom: 30px; /* Space between the title and the list */
+  font-weight: bold;
+}
+
+/* User list container for the frames */
+.user-items-container {
+  display: flex;
+  flex-direction: column; /* Stack users vertically */
+  align-items: center; /* Center the users */
+  width: 100%;
+  max-width: 800px; /* Limit the width for large screens */
+}
+
+/* Individual user frame */
+.user-item {
+  background-color: rgba(26, 61, 92, 0.7); /* Dark blueish background with transparency */
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 20px; /* Space between user frames */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: white;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  text-align: center;
+}
+
+/* Hover effect to lighten the user frame */
+.user-item:hover {
+  background-color: rgba(26, 61, 92, 0.9); /* Darker background on hover */
+  transform: scale(1.03); /* Slight enlargement */
+}
+
+/* User photo styling inside the frame */
+.user-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* User information styling */
+.user-info {
+  margin-top: 10px;
+}
+
+.user-info p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #f0f0f0; /* Light gray text for user details */
+}
+
+/* Button styling inside user frame */
+.user-info button {
+  background-color: #C28285; /* Light pink for the button */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.user-info button:hover {
+  background-color: #9B4D42; /* Hover color for button */
+  transform: scale(1.05);
+}
+
+/* Logout button styling */
+button.logout {
+  background-color: #1A3D5C; /* Dark teal */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 20px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+button.logout:hover {
+  background-color: #9B4D42; /* Hover effect for logout button */
+  transform: scale(1.05);
+}

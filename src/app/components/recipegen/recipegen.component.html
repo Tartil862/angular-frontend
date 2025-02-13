@@ -1,0 +1,88 @@
+<div class="recipegen-container" [class.blurred]="selectedRecipe">
+  <div class="container">
+    <h1>Recipe Generator</h1>
+    <form (ngSubmit)="generateRecipes()" [formGroup]="recipeForm">
+      <!-- Ingredient Selection -->
+      <div class="ingredient-section">
+        <h2>Select Ingredients</h2>
+        <div class="ingredient-grid">
+          <div *ngFor="let ingredient of ingredients" class="ingredient-card">
+            <img [src]="ingredient.imageUrl" [alt]="ingredient.name" />
+            <label>
+              <input
+                type="checkbox"
+                [formControlName]="ingredient.name"
+                (change)="onIngredientChange(ingredient.name, $event)"
+              />
+              {{ ingredient.name }}
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dish Type Selection -->
+      <div class="form-group">
+        <label for="dishType">Dish Type</label>
+        <select id="dishType" formControlName="dishType">
+          <option *ngFor="let type of dishTypes" [value]="type">{{ type }}</option>
+        </select>
+      </div>
+
+      <!-- Recipe Type Selection -->
+      <div class="form-group">
+        <label for="recipeType">Recipe Type</label>
+        <select id="recipeType" formControlName="recipeType">
+          <option *ngFor="let type of recipeTypes" [value]="type">{{ type }}</option>
+        </select>
+      </div>
+
+      <!-- Generate Recipes Button -->
+      <button type="submit">Generate Recipes</button>
+    </form>
+    <br>
+    <h2>Generated Recipes</h2>
+
+    <!-- Display Generated Recipes -->
+    <div *ngIf="recipes.length > 0" class="recipe-section">
+      
+      <br>
+      <div *ngFor="let recipe of recipes; let i = index" class="card-container">
+        <div class="card" (click)="toggleRecipeDetails(recipe)">
+          <img [src]="recipe.image ? recipe.image : '../../../assets/bowl.png'" alt="" class="card-media" />
+          <div class="card-body">
+            <h2 class="card-title">{{ recipe.title }}</h2>
+            <p class="card-description">{{ recipe.instructions | slice:0:100 }}...</p>
+            <div class="card-read">Read More</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" [class.active]="selectedRecipe">
+  <div class="recipe-details" [class.active]="selectedRecipe">
+    <!-- Title -->
+    <h3>{{ selectedRecipe?.title }}</h3>
+
+    <!-- Image -->
+    <img [src]="selectedRecipe?.image" alt="{{ selectedRecipe?.title }}" />
+
+    <!-- Ingredients -->
+    <div class="ingredients">
+      <h4>Ingredients</h4>
+      <ul>
+        <li *ngFor="let ingredient of selectedRecipe?.ingredients">{{ ingredient.name }}</li>
+      </ul>
+    </div>
+
+    <!-- Instructions -->
+    <div class="instructions">
+      <h4>Instructions</h4>
+      <p>{{ selectedRecipe?.instructions }}</p>
+    </div>
+
+    <!-- Close Button -->
+    <button (click)="closeRecipeDetails()">Close</button>
+  </div>
+</div>

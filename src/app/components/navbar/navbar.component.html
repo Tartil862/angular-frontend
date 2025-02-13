@@ -1,0 +1,102 @@
+<!-- 
+  - #HEADER
+-->
+
+<header class="header">
+
+  <div class="header-top">
+    <div class="container">
+
+      <ul class="contact-list">
+
+        <li class="contact-item">
+          <ion-icon name="mail-outline"></ion-icon>
+
+          <a href="tbenfriha309@gmail.com" class="contact-link">chef’s kiss 152gmail.com</a>
+        </li>
+
+        <li class="contact-item">
+          <ion-icon name="call-outline"></ion-icon>
+
+          <a href="tel:+21693805935" class="contact-link">+216 123-456-7890</a>
+        </li>
+
+      </ul>
+
+      <ul class="social-list">
+
+        <li>
+          <a href="https://www.facebook.com/yqyny.yqyny.79" class="social-link">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/yqyny.yqyny.79" class="social-link">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://youtube.com/shorts/rltZSyJ1CQ8?si=_yiBOSNTN7wOzMjM" class="social-link">
+            <ion-icon name="logo-youtube"></ion-icon>
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+
+  <div class="header-bottom" data-header>
+    <div class="container">
+
+
+      <a href="#" class="logo">
+  <img src="../../../assets/che.ico" alt="Chef's Kiss Logo" class="logo-img" />Chef's Kiss
+  
+</a>
+
+      <nav class="navbar container" data-navbar [ngClass]="status ? 'active' : ''">
+        <ul class="navbar-list">
+
+          <li>
+            <a [routerLink]="['/home']" fragment="home" class="navbar-link" data-nav-link>Home</a>
+          </li>
+          <li>
+            <a [routerLink]="['/home']" fragment="service" class="navbar-link" data-nav-link>Features</a>
+          </li>
+          <li>
+            <a [routerLink]="['/home']" fragment="about" class="navbar-link" data-nav-link>About Us</a>
+          </li>
+          <li>
+            <a [routerLink]="['/home']" fragment="team" class="navbar-link" data-nav-link>Our Team</a>
+          </li>
+          <li *ngIf="isAdmin()">
+            <a [routerLink]="'/admin'" class="navbar-link">list Of Users</a>
+          </li>
+          <li *ngIf="isUser()">
+            <a [routerLink]="'/recipe'" class="navbar-link" >generate recipe</a>
+          </li>
+          <li *ngIf="isUser() || isAdmin()">
+            <a [routerLink]="'/profile'" class="navbar-link" >Edit Profile</a>
+          </li>
+        </ul>
+      </nav>
+
+      <li *ngIf="!isUser() && !isAdmin()">
+        <a [routerLink]="'/signin'" class="btn">Get Started</a>
+      </li>
+      <li *ngIf="isUser() || isAdmin()">
+        <button (click)="onLogout()" class="btn">Logout</button>
+      </li>
+
+      <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggler (click)="addToggle()">
+        <ion-icon name="menu-sharp" aria-hidden="true" class="menu-icon"></ion-icon>
+        <ion-icon name="close-sharp" aria-hidden="true" class="close-icon"></ion-icon>
+      </button>
+
+    </div>
+  </div>
+
+</header>

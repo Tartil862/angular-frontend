@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'recipeApp';
+  title = 'ecommerce';
+  //Sidebar toggle show hide function
+  status = false;
+  addToggle()
+  {
+    this.status = !this.status;       
+  }
 }

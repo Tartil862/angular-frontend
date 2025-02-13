@@ -1,1 +1,350 @@
 /* You can add global styles to this file, and also import other style files */
+/*-----------------------------------*\
+  #style.css
+\*-----------------------------------*/
+
+/**
+ * copyright 2023 therichpost
+ */
+
+
+
+
+
+/*-----------------------------------*\
+  #CUSTOM PROPERTY
+\*-----------------------------------*/
+
+:root {
+
+    /**
+     * colors
+     */
+  
+    --primary-green: hsl(138, 38%, 31%); /* #387647 - Main brand color */
+    --light-yellow: hsla(55, 100%, 84%, 0.96); /* #fff7ad - Gradient color */
+    --light-pink: hsla(305, 100%, 81%, 0.942); /* #ffa9f9 - Gradient color */
+    --dark-brown: hsl(20, 13%, 30%); /* #544541 - Neutral dark color */
+    --light-orange: hsl(42, 98%, 70%); /* #fdd974 - Accent color */
+    --golden-yellow: hsl(42, 92%, 63%); /* #f6c142 - Accent color */
+    --bright-pink: hsl(342, 100%, 61%); /* #ff3873 - Highlight color */
+    --peach: hsl(19, 89%, 76%); /* #f7ac89 - Soft accent */
+    --soft-blue: hsl(203, 43%, 58%); /* #609dbd - Complementary color */
+    --dark-blue: hsl(226, 54%, 38%); /* #2e4494 - Dark complementary */
+    --pale-green: hsl(72, 89%, 79%); /* #effa99 - Light accent */
+  
+    /* Additional colors for better contrast and variety */
+    --deep-red: hsl(355, 78%, 50%); /* #d32f2f - For alerts or warnings */
+    --mint-green: hsl(160, 50%, 75%); /* #a2e8c0 - Fresh and clean */
+    --warm-gray: hsl(30, 10%, 85%); /* #e0dcd5 - Neutral background */
+    --charcoal: hsl(210, 10%, 23%); /* #333a3f - Dark text color */
+    --off-white: hsl(40, 20%, 96%); /* #f5f3ef - Light background */
+  
+    /**
+     * gradient color
+     */
+  
+    --gradient: linear-gradient(90deg, var(--light-yellow) 0%, var(--light-pink) 100%);
+  
+    /**
+     * typography
+     */
+  
+    --ff-roboto: "Roboto", sans-serif;
+    --ff-poppins: "Poppins", sans-serif;
+  
+    --fs-1: 4rem;
+    --fs-2: 3.6rem;
+    --fs-3: 3.2rem;
+    --fs-4: 2.4rem;
+    --fs-5: 2.2rem;
+    --fs-6: 1.8rem;
+    --fs-7: 1.6rem;
+  
+    --fw-800: 800;
+    --fw-700: 700;
+    --fw-600: 600;
+    --fw-500: 500;
+  
+    /**
+     * spacing
+     */
+  
+    --section-padding: 120px;
+  
+    /**
+     * shadow
+     */
+  
+    --shadow-1: 4px 4px 15px var(--black_10);
+    --shadow-2: 0 10px 15px var(--black_10);
+    --shadow-3: 0px 20px 60px var(--black_8);
+    --shadow-4: 0px 10px 30px hsla(305, 100%, 81%, 0.3); /* Adjusted for --light-pink */
+    --shadow-5: 0px 2px 60px 0px var(--black_10);
+  
+    /**
+     * border radius
+     */
+  
+    --radius-6: 6px;
+    --radius-4: 4px;
+  
+    /**
+     * transition
+     */
+  
+    --transition: 0.25s ease;
+    --cubic-out: cubic-bezier(0.33, 0.85, 0.4, 0.96);
+  
+  }
+
+
+
+
+
+/*-----------------------------------*\
+  #RESET
+\*-----------------------------------*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li { list-style: none; }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a,
+img,
+span,
+input,
+button,
+ion-icon { display: block; }
+
+img { height: auto; }
+
+input,
+button {
+  background: none;
+  border: none;
+  font: inherit;
+}
+
+input { width: 100%; }
+
+button { cursor: pointer; }
+
+ion-icon { pointer-events: none; }
+
+address { font-style: normal; }
+
+html {
+  font-family: var(--ff-roboto);
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+body {
+  background: linear-gradient(135deg, var(--off-white), var(--warm-gray)); /* Light gradient */
+  font-size: 1.5rem;
+  position: relative !important;
+  overflow-y: scroll !important;
+}
+
+
+/*-----------------------------------*\
+  #REUSED STYLE
+\*-----------------------------------*/
+
+.container { padding-inline: 25px; }
+
+.section { padding-block: var(--section-padding); }
+
+.section-subtitle {
+  color: var(--royal-blue-light);
+  font-family: var(--ff-poppins);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-700);
+  text-transform: uppercase;
+  margin-block-end: 10px;
+}
+
+.h1,
+.h2,
+.h3 {
+  font-family: var(--ff-poppins);
+  line-height: 1.2;
+}
+
+.h1 {
+  color: var(--oxford-blue-1);
+  font-size: var(--fs-2);
+}
+
+.h2,
+.h3 { color: var(--oxford-blue-2); }
+
+.h2 { font-size: var(--fs-1); }
+
+.h3 { font-size: var(--fs-5); }
+
+.btn {
+  background-image: linear-gradient( var(--deg, 90deg), var(--carolina-blue) 0%, var(--royal-blue-light) 100%);
+  color: var(--white);
+  font-size: var(--fs-7);
+  text-transform: uppercase;
+  padding: 20px 30px;
+  text-align: center;
+  border-radius: var(--radius-4);
+  box-shadow: var(--shadow-4);
+}
+
+.btn:is(:hover, :focus) { --deg: -90deg; }
+
+.w-100 { width: 100%; }
+
+.text-center { text-align: center; }
+
+.card-text,
+.section-text { line-height: 1.7; }
+
+.img-holder {
+  aspect-ratio: var(--width) / var(--height);
+  background-color: var(--light-gray);
+}
+
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+
+
+/*-----------------------------------*\
+  #HEDER
+\*-----------------------------------*/
+
+.header-top,
+.header-bottom .btn { display: none; }
+
+.header-bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-block: 15px;
+  z-index: 4;
+}
+
+.header-bottom.active {
+  position: fixed;
+  top: -81px;
+  background-color: var(--white);
+  box-shadow: var(--shadow-2);
+  animation: slideIn 0.5s var(--cubic-out) forwards;
+}
+
+@keyframes slideIn {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100%); }
+}
+
+.header-bottom > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  color: #f7ac89;
+  font-family: var(--ff-poppins);
+  font-size: 4rem;
+  font-weight: var(--fw-800);
+}
+
+.nav-toggle-btn {
+  color: var(--black);
+  font-size: 30px;
+  border: 1px solid var(--black);
+  padding: 5px;
+}
+
+.nav-toggle-btn.active .menu-icon,
+.nav-toggle-btn .close-icon { display: none; }
+
+.nav-toggle-btn .menu-icon,
+.nav-toggle-btn.active .close-icon { display: block; }
+
+.navbar {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 25px;
+  right: 25px;
+  background-color: var(--white);
+  padding-inline: 0;
+  box-shadow: var(--shadow-1);
+  max-height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transition: 0.25s var(--cubic-out);
+}
+
+.navbar.active {
+  visibility: visible;
+  max-height: 244px;
+  transition-duration: 0.5s;
+}
+
+.navbar-list > li:not(:last-child) { border-block-end: 1px solid var(--gainsboro_50); }
+
+.navbar-link {
+  color: var(--jet);
+  text-transform: uppercase;
+  font-weight: var(--fw-600);
+  padding: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+/*-----------------------------------*\
+  #BACK TO TOP
+\*-----------------------------------*/
+
+.back-top-btn {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  background-color: var(--royal-blue-light);
+  font-size: 18px;
+  color: var(--white);
+  padding: 14px;
+  border-radius: 50%;
+  visibility: hidden;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.back-top-btn.active {
+  transform: translateY(-10px);
+  visibility: visible;
+  opacity: 1;
+}
+
+

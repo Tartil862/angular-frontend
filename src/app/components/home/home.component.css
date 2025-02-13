@@ -1,0 +1,802 @@
+/*-----------------------------------*\
+  #HERO
+\*-----------------------------------*/
+
+.hero {
+    position: relative; /* Ensure the hero section is positioned relative */
+    background-position: center;
+    padding-block-end: calc(var(--section-padding) / 2);
+    background-color: #f9f0e1; 
+    overflow: hidden; /* Hide overflow for smooth animation */
+  }
+  
+  .hero-content {
+    position: relative; /* Ensure content stays above the floating image */
+    z-index: 1; /* Bring content to the front */
+    margin-block-end: 50px;
+  }
+  
+  .hero-title {
+    margin-block: 15px 30px;
+    color: var(--dark-blue); /* Dark blue for a strong, elegant heading */
+    font-size: var(--fs-2);
+    font-weight: var(--fw-800);
+  }
+  
+  .hero-text {
+    font-size: var(--fs-6);
+    line-height: 1.7;
+    margin-block-end: 40px;
+    color: var(--dark-blue); /* Charcoal for readability */
+  }
+  
+  .hero-form {
+    background-color: var(--white);
+    max-width: 95%;
+    padding: 20px;
+    border-radius: var(--radius-6); /* Rounded corners for a modern look */
+    box-shadow: var(--shadow-3);
+  }
+  
+  .hero-form .email-field {
+    background-color: #9d9c9c34; /* Soft gray for the input field */
+    color: var(--charcoal);
+    min-height: 70px;
+    padding-inline: 20px;
+    border-radius: var(--radius-4);
+    margin-block-end: 15px;
+    border: 1px solid var(--light-gray); /* Subtle border for definition */
+  }
+  
+  .hero-form .btn {
+    width: 100%;
+    background-image: var(--gradient); /* Gradient for the button */
+    color: var(--charcoal);
+    font-weight: var(--fw-600);
+    transition: var(--transition);
+  }
+  
+  .hero-form .btn:is(:hover, :focus) {
+    background-image: linear-gradient(90deg, var(--light-pink) 0%, var(--light-yellow) 100%);
+    transform: translateY(-2px); /* Slight lift on hover */
+  }
+  /*-----------------------------------*\
+    #SERVICE
+  \*-----------------------------------*/
+  
+  .service {
+    padding-block-end: 0;
+    background-color: #f9f0e1; /* Light background for contrast */
+  }
+  
+  .service .section-title {
+    margin-block-end: 50px;
+    color: var(--dark-blue); /* Dark blue for consistency */
+  }
+  
+  .service-list {
+    display: grid;
+    gap: 20px;
+  }
+  
+  .service-card {
+    height: 170px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 25px;
+    background-color: #35544734;
+    border-radius: var(--radius-6);
+    box-shadow: var(--shadow-2);
+    transition: var(--transition);
+  }
+  
+  .service-card:is(:hover, :focus-within) {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: var(--shadow-4);
+  }
+  
+  .service-card .card-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: var(--radius-4);
+  }
+  
+  .service-card .card-icon img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .service-card .card-title {
+    color: var(--dark-blue);
+    font-size: var(--fs-5);
+    margin-block-end: 10px;
+  }
+  
+  .service-card .card-text {
+    color: var(--charcoal);
+    font-size: var(--fs-7);
+    line-height: 1.6;
+  }
+  
+  /*-----------------------------------*\
+    #ABOUT
+  \*-----------------------------------*/
+  
+  .about {
+    padding-block-end: 0;
+    background-color: #f9f0e1; 
+  }
+  
+  .about-banner { margin-block-end: 50px; }
+  
+  .about .section-title {
+    color: var(--dark-blue);
+    margin-block-end: 20px;
+  }
+  
+  .about .section-text {
+    color: var(--charcoal);
+    line-height: 1.7;
+    margin-block-end: 30px;
+  }
+  
+  .about .btn {
+    background-image: var(--gradient);
+    color: var(--charcoal);
+    font-weight: var(--fw-600);
+    padding: 15px 30px;
+    border-radius: var(--radius-4);
+    transition: var(--transition);
+  }
+  
+  .about .btn:is(:hover, :focus) {
+    background-image: linear-gradient(90deg, var(--light-pink) 0%, var(--light-yellow) 100%);
+    transform: translateY(-2px);
+  }
+  
+ /*-----------------------------------*\
+  #OUR TEAM
+\*-----------------------------------*/
+
+.team {
+  padding-block-end: 100px;
+  background-color: #f9f0e1; /* Light background color */
+}
+
+.team .section-title {
+  margin-block-end: 100px;
+  color: var(--dark-blue); /* Dark blue for consistency */
+}
+
+.team-card {
+  padding: 25px;
+  background-color: #f7ac89; /* White background for cards */
+  border-radius: var(--radius-6); /* Rounded corners */
+  box-shadow: var(--shadow-2); /* Subtle shadow */
+  transition: var(--transition); /* Smooth transition for hover effects */
+  text-align: center; /* Center-align content */
+}
+
+.team-card:is(:hover, :focus-within) {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: var(--shadow-4); /* Enhanced shadow on hover */
+}
+
+.team-card .card-banner {
+  border-radius: var(--radius-4); /* Rounded corners for the image */
+  overflow: hidden; /* Ensure the image stays within the bounds */
+  margin-block-end: 20px; /* Space below the image */
+}
+
+.team-card .card-banner img {
+  width: 100%; /* Ensure the image fills the container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.team-card .card-title {
+  color: var(--dark-blue); /* Dark blue for the name */
+  font-size: var(--fs-5); /* Font size for the name */
+  margin-block-end: 10px; /* Space below the name */
+  transition: var(--transition); /* Smooth transition for hover effects */
+}
+
+.team-card .card-subtitle {
+  color: var(--soft-blue); /* Soft blue for the role */
+  margin-block-end: 15px; /* Space below the role */
+}
+
+.team-card .card-social-list {
+  display: flex;
+  justify-content: center; /* Center-align social icons */
+  gap: 10px; /* Space between social icons */
+}
+
+.team-card .card-social-link {
+  background-color: var(--mint-green); /* Mint green background for icons */
+  color: var(--dark-blue); /* Dark blue icon color */
+  font-size: 16px; /* Icon size */
+  padding: 12px; /* Padding for the icons */
+  border-radius: 50%; /* Circular icons */
+  transition: var(--transition); /* Smooth transition for hover effects */
+}
+
+.team-card .card-social-link:is(:hover, :focus) {
+  background-color: var(--dark-blue); /* Dark blue background on hover */
+  color: var(--white); /* White icon color on hover */
+}
+  
+  /*-----------------------------------*\
+    #SCROLLBAR
+  \*-----------------------------------*/
+  
+  .has-scrollbar {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    padding-block-end: 40px;
+    margin-block-end: -20px;
+    scroll-snap-type: inline mandatory;
+  }
+  
+  .has-scrollbar::-webkit-scrollbar { height: 10px; }
+  
+  .has-scrollbar::-webkit-scrollbar-track {
+    background-color: var(--light-gray);
+    border-radius: var(--radius-4);
+  }
+  
+  .has-scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--soft-blue);
+    border-radius: var(--radius-4);
+  }
+  .section-subtitle {
+    color:#f7ac89;;
+    font-family: var(--ff-poppins);
+    font-size: 60px;
+    font-weight: var(--fw-700);
+    text-transform: uppercase;
+    margin-block-end: 10px;
+  }
+  /* Content Animation Styles */
+.section .content {
+  opacity: 0;
+  transform: translateY(50px); /* Start slightly below */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section.visible .content {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Move to original position */
+}
+  /*-----------------------------------*\
+  #HERO BANNER ANIMATION
+\*-----------------------------------*/
+
+.hero-banner {
+    animation: float 3s ease-in-out infinite; /* Animation name, duration, timing function, and iteration */
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0); /* Start and end at the original position */
+    }
+    50% {
+      transform: translateY(-20px); /* Move up by 20px at the midpoint */
+    }
+  }
+  @keyframes blurAnimation {
+    0% {
+      filter: blur(10px);
+    }
+    100% {
+      filter: blur(0);
+    }
+  }
+  
+
+  /*-----------------------------------*\
+  #CTA
+\*-----------------------------------*/
+
+.cta { background-color: var(--oxford-blue-1); }
+
+.cta-banner {
+  margin-block-end: 50px; /* Existing margin */
+}
+
+.cta-banner img {
+  width: 100%; /* Adjust this value to control the width */
+  max-width: 450px; /* Set a maximum width for the image */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional: Add rounded corners */
+  transition: transform 0.3s ease; /* Optional: Add hover effect */
+}
+
+.cta-banner img:hover {
+  transform: scale(1.05); /* Optional: Add a slight zoom on hover */
+}
+
+.cta .section-subtitle { text-transform: capitalize; }
+
+.cta .section-title {
+  color: var(--white);
+  font-size: var(--fs-3);
+  margin-block-end: 30px;
+}
+
+.cta .btn {  max-width: max-content;
+  background-image: var(--gradient); }
+.cta-content.btn{
+  background-image: var(--gradient); /* Gradient for the button */
+    color: var(--charcoal);
+    font-weight: var(--fw-600);
+    transition: var(--transition);
+  }
+  
+  .cta .btn:is(:hover, :focus) {
+    background-image: linear-gradient(90deg, var(--light-pink) 0%, var(--light-yellow) 100%);
+    transform: translateY(-2px); /* Slight lift on hover */
+  }
+
+
+
+  
+
+
+/*-----------------------------------*\
+  #MEDIA QUERIES
+\*-----------------------------------*/
+
+/**
+ * responsive for larger than 575px screen
+ */
+
+@media (min-width: 575px) {
+
+    /**
+     * CUSTOM PROPERTY
+     */
+  
+    :root {
+  
+      /**
+       * typography
+       */
+  
+      --fs-1: 4.2rem;
+  
+    }
+  
+  
+  
+    /**
+     * REUSED STYLE
+     */
+  
+    .container {
+      max-width: 540px;
+      width: 100%;
+      margin-inline: auto;
+    }
+  
+  
+  
+    /**
+     * BLOG
+     */
+  
+    .blog-card .h3 { --fs-5: 2.6rem; }
+  
+  
+  
+    /**
+     * FOOTER
+     */
+  
+    .footer-top .container { grid-template-columns: 1fr 1fr; }
+  
+  }
+  
+  
+  
+  
+  
+  /**
+   * responsive for larger than 768px screen
+   */
+  
+  @media (min-width: 768px) {
+  
+    /**
+     * CUSTOM PROPERTY
+     */
+  
+    :root {
+  
+      /**
+       * typography
+       */
+  
+      --fs-2: 4.8rem;
+  
+    }
+  
+  
+  
+    /**
+     * RESET
+     */
+  
+    body { font-size: 1.6rem; }
+  
+  
+  
+    /**
+     * REUSED STYLE
+     */
+  
+    .container { max-width: 750px; }
+  
+    .section-subtitle { --fs-6: 2.2rem; }
+  
+  
+  
+    /**
+     * HERO
+     */
+  
+    .hero { overflow: hidden; }
+  
+    .hero .container {
+      display: grid;
+      grid-template-columns: 1fr 0.75fr;
+      align-items: center;
+      gap: 20px;
+    }
+  
+    .hero-content { margin-block-end: 0; }
+  
+    .hero-form { position: relative; }
+  
+    .hero-form .email-field {
+      margin-block-end: 0;
+      padding-inline-end: 190px;
+    }
+  
+    .hero-form .btn {
+      width: auto;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      bottom: 15px;
+    }
+  
+    .hero-banner { margin-inline-end: -60px; }
+  
+  
+  
+    /**
+     * SERVICE
+     */
+  
+    .service-list {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 30px;
+    }
+  
+  
+  
+    /**
+     * DOCTOR
+     */
+  
+    .scrollbar-item { min-width: calc(50% - 15px); }
+  
+  
+  
+    /**
+     * CTA
+     */
+  
+    .cta { padding-block: 0; 
+    background-color: #f9f0e1;}
+  
+    .cta .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: flex-end;
+      gap: 60px;
+    }
+  
+    .cta-banner { margin-block-end: 0; }
+  
+    .cta-content { padding-block: 60px; }
+
+
+  
+  
+  
+    /**
+     * BLOG
+     */
+  
+    .blog-list { grid-template-columns: 1fr 1fr; }
+  
+  
+  
+    /**
+     * FOOTER
+     */
+  
+    .footer-bottom { padding-block: 30px; }
+  
+    .footer-bottom .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .copyright { margin-block-end: 0; }
+  
+  
+  
+    /**
+     * BACK TO TOP
+     */
+  
+    .back-top-btn {
+      bottom: 70px;
+      right: 50px;
+    }
+  
+  }
+  
+  
+  
+  
+  
+  /**
+   * responsive for larger than 992px screen
+   */
+  
+  @media (min-width: 992px) {
+  
+    /**
+     * CUSTOM PROPERTY
+     */
+  
+    :root {
+  
+      /**
+       * typography
+       */
+  
+      --fs-2: 6rem;
+      --fs-1: 4.6rem;
+      --fs-3: 4.6rem;
+  
+    }
+  
+  
+  
+    /**
+     * REUSED STYLE
+     */
+  
+    .container { max-width: 980px; }
+  
+  
+  
+    
+    /**
+     * SERVICE
+     */
+  
+    .service-list { grid-template-columns: repeat(3, 1fr); }
+  
+    .service-banner {
+      display: block;
+      grid-column: 2 / 3;
+      grid-row: 1 / 4;
+      align-self: center;
+    }
+  
+  
+  
+    /**
+     * ABOUT
+     */
+  
+    .about .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 30px;
+    }
+  
+    .about-banner { margin-block-end: 0; }
+  
+  
+  
+    /**
+     * DOCTOR
+     */
+  
+    .scrollbar-item { min-width: calc(33.33% - 20px); }
+  
+  
+  
+    /**
+     * CTA
+     */
+  
+    .cta-content { padding-block: 80px; }
+  
+  
+    /**
+     * FOOTER
+     */
+  
+    .footer-top .container { grid-template-columns: 1fr 0.5fr 0.6fr 0.75fr; }
+  
+  }
+  
+  
+  
+  
+  
+  /**
+   * responsive for larger than 1200px screen
+   */
+  
+  @media (min-width: 1200px) {
+  
+    /**
+     * CUSTOM PROPERTY
+     */
+  
+    :root {
+  
+      /**
+       * typography
+       */
+  
+      --fs-2: 8rem;
+      --fs-1: 5.5rem;
+      --fs-3: 4.8rem;
+  
+    }
+  
+  
+  
+    /**
+     * REUSED STYLE
+     */
+  
+    .container { max-width: 1180px; }
+  
+  
+  
+    /**
+     * HEADER
+     */
+  
+    .contact-list { gap: 30px; }
+  
+    .header-bottom .btn { padding: 18px 30px; }
+  
+    .header-bottom > .container { gap: 40px; }
+  
+    .navbar-list { gap: 15px; }
+  
+  
+  
+    /**
+     * ABOUT
+     */
+  
+    .about .container {
+      grid-template-columns: 0.85fr 1fr;
+      gap: 100px;
+    }
+  
+  
+  
+    /**
+     * DOCTOR
+     */
+  
+    .doctor { padding-block-end: 180px; }
+  
+    .scrollbar-item { min-width: calc(25% - 22.5px); }
+  
+    .has-scrollbar {
+      padding-block-end: 0;
+      margin-block-end: 0;
+    }
+  
+  
+  
+    /**
+     * CTA
+     */
+  
+    .cta .container { align-items: center; }
+  
+    .cta-banner { margin-block-start: -120px; }
+  
+  }
+
+  /* Content Animation Styles */
+.section .hero-content,
+.section .service
+.section .service-list,
+.section .about-content,
+.section .team-card,
+.section .cta-content {
+  opacity: 0;
+  transform: translateY(50px); /* Start slightly below */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.section.visible .hero-content,
+.section.visible .service,
+.section.visible .service-list,
+.section.visible .about-content,
+.section.visible .team-card,
+.section.visible .cta-content {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Move to original position */
+}
+
+/* Staggered Animations for Content */
+.section.visible .hero-content > *,
+.section.visible .service-list > *,
+.section.visible .about-content > *,
+.section.visible .team-card > *,
+.section.visible .cta-content > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section.visible .hero-content > *:nth-child(1),
+.section.visible .service-list > *:nth-child(1),
+.section.visible .about-content > *:nth-child(1),
+.section.visible .team-card > *:nth-child(1),
+.section.visible .cta-content > *:nth-child(1) {
+  transition-delay: 0.2s;
+}
+
+.section.visible .hero-content > *:nth-child(2),
+.section.visible .service-list > *:nth-child(2),
+.section.visible .about-content > *:nth-child(2),
+.section.visible .team-card > *:nth-child(2),
+.section.visible .cta-content > *:nth-child(2) {
+  transition-delay: 0.4s;
+}
+
+.section.visible .hero-content > *:nth-child(3),
+.section.visible .service-list > *:nth-child(3),
+.section.visible .about-content > *:nth-child(3),
+.section.visible .team-card > *:nth-child(3),
+.section.visible .cta-content > *:nth-child(3) {
+  transition-delay: 0.6s;
+}
+
+.section.visible .hero-content > *,
+.section.visible .service-list > *,
+.section.visible .about-content > *,
+.section.visible .team-card > *,
+.section.visible .cta-content > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+  
+  
+  

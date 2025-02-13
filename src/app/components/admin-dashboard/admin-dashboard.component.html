@@ -1,0 +1,15 @@
+
+<div class="user-list">
+  <h2>List Of Users</h2>
+  <br/>
+  <div class="user-items-container">
+    <div *ngFor="let user of users" class="user-item">
+      <img [src]="user.photoUrl" alt="{{ user.firstName }}'s photo" class="user-photo" *ngIf="user.photoUrl" />
+      <div class="user-info">
+        <p>{{ user.firstName }} {{ user.lastName }} - {{ user.email }}</p>
+        <button (click)="deleteUser(user.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
