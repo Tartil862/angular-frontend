@@ -316,7 +316,192 @@ body {
 
 
 
+/*-----------------------------------*\
+  #OUR TEAM
+\*-----------------------------------*/
 
+.team {
+  padding-block-end: 100px;
+  background-color: #f9f0e1; /* Light background color */
+}
+
+.team .section-title {
+  margin-block-end: 100px;
+  color: var(--dark-blue); /* Dark blue for consistency */
+}
+
+.team-card {
+  padding: 25px;
+  background-color: #f7ac89; /* White background for cards */
+  border-radius: var(--radius-6); /* Rounded corners */
+  box-shadow: var(--shadow-2); /* Subtle shadow */
+  transition: var(--transition); /* Smooth transition for hover effects */
+  text-align: center; /* Center-align content */
+}
+
+.team-card:is(:hover, :focus-within) {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: var(--shadow-4); /* Enhanced shadow on hover */
+}
+
+.team-card .card-banner {
+  border-radius: var(--radius-4); /* Rounded corners for the image */
+  overflow: hidden; /* Ensure the image stays within the bounds */
+  margin-block-end: 20px; /* Space below the image */
+}
+
+.team-card .card-banner img {
+  width: 100%; /* Ensure the image fills the container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.team-card .card-title {
+  color: var(--dark-blue); /* Dark blue for the name */
+  font-size: var(--fs-5); /* Font size for the name */
+  margin-block-end: 10px; /* Space below the name */
+  transition: var(--transition); /* Smooth transition for hover effects */
+}
+
+.team-card .card-subtitle {
+  color: var(--soft-blue); /* Soft blue for the role */
+  margin-block-end: 15px; /* Space below the role */
+}
+
+.team-card .card-social-list {
+  display: flex;
+  justify-content: center; /* Center-align social icons */
+  gap: 10px; /* Space between social icons */
+}
+
+.team-card .card-social-link {
+  background-color: var(--mint-green); /* Mint green background for icons */
+  color: var(--dark-blue); /* Dark blue icon color */
+  font-size: 16px; /* Icon size */
+  padding: 12px; /* Padding for the icons */
+  border-radius: 50%; /* Circular icons */
+  transition: var(--transition); /* Smooth transition for hover effects */
+}
+
+.team-card .card-social-link:is(:hover, :focus) {
+  background-color: var(--dark-blue); /* Dark blue background on hover */
+  color: var(--white); /* White icon color on hover */
+}
+
+/*-----------------------------------*\
+    #SCROLLBAR
+  \*-----------------------------------*/
+  
+  .has-scrollbar {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    padding-block-end: 40px;
+    margin-block-end: -20px;
+    scroll-snap-type: inline mandatory;
+  }
+  
+  .has-scrollbar::-webkit-scrollbar { height: 10px; }
+  
+  .has-scrollbar::-webkit-scrollbar-track {
+    background-color: var(--light-gray);
+    border-radius: var(--radius-4);
+  }
+  
+  .has-scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--soft-blue);
+    border-radius: var(--radius-4);
+  }
+  .section-subtitle {
+    color:#f7ac89;;
+    font-family: var(--ff-poppins);
+    font-size: 60px;
+    font-weight: var(--fw-700);
+    text-transform: uppercase;
+    margin-block-end: 10px;
+  }
+  /* Content Animation Styles */
+.section .content {
+  opacity: 0;
+  transform: translateY(50px); /* Start slightly below */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section.visible .content {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Move to original position */
+}
+
+
+/**
+   * HEADER
+   */
+
+   .header-top {
+    display: block;
+    background-color: #fbaf8bbe; /* Updated to peach with transparency */
+    color: hsl(226, 54%, 38%); /* Updated to off-white */
+    padding-block: 20px;
+  }
+
+  .header-top :is(.container, .social-list),
+  .contact-list,
+  .contact-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-top .container { justify-content: space-between; }
+
+  .contact-list { gap: 20px; }
+
+  .contact-item { gap: 5px; }
+
+  .contact-item ion-icon {
+    color: hsl(226, 54%, 38%); /* Updated to light pink */
+    --ionicon-stroke-width: 40px;
+  }
+
+  .contact-link {
+    font-size: 1.5rem;
+    color:hsl(226, 54%, 38%);; /* Updated to off-white */
+  }
+
+  .header-top .social-list { gap: 15px; }
+
+  .header-top .social-link {
+    font-size: var(--fs-6);
+    color: hsl(226, 54%, 38%); /* Updated to off-white */
+    transition: var(--transition);
+  }
+
+  .header-top .social-link:is(:hover, :focus) {
+    color:#ff9cffc8 ; /* Updated to light pink */
+  }
+
+  .header-bottom {
+    top: 58px;
+    padding-block: 20px;
+    background-color: rgba(255, 204, 221, 0.16); /* Updated to light pink with transparency */
+    transition: var(--transition); /* Added transition for smooth hover effect */
+  }
+
+  .header-bottom:is(:hover, :focus-within) {
+    background-color: var(--light-yellow); /* Navbar background turns light yellow on hover */
+  }
+
+  .header-bottom.active {
+    top: -95px;
+    background-color: var(--primary-green); /* Updated to primary green */
+    box-shadow: var(--shadow-2);
+  }
+
+  .nav-toggle-btn { display: none; }
+
+  .navbar,
+  .navbar.active {
+    all: unset;
+    margin-inline-start: auto;
+  }
 
 
 
@@ -345,6 +530,274 @@ body {
   transform: translateY(-10px);
   visibility: visible;
   opacity: 1;
+}
+/*-----------------------------------*\
+  #HERO
+\*-----------------------------------*/
+
+.hero {
+  position: relative; /* Ensure the hero section is positioned relative */
+  background-position: center;
+  padding-block-end: calc(var(--section-padding) / 2);
+  background-color: #f9f0e1; 
+  overflow: hidden; /* Hide overflow for smooth animation */
+}
+
+.hero-content {
+  position: relative; /* Ensure content stays above the floating image */
+  z-index: 1; /* Bring content to the front */
+  margin-block-end: 50px;
+}
+
+.hero-title {
+  margin-block: 15px 30px;
+  color: var(--dark-blue); /* Dark blue for a strong, elegant heading */
+  font-size: var(--fs-2);
+  font-weight: var(--fw-800);
+}
+
+.hero-text {
+  font-size: var(--fs-6);
+  line-height: 1.7;
+  margin-block-end: 40px;
+  color: var(--dark-blue); /* Charcoal for readability */
+}
+
+.hero-form {
+  background-color: var(--white);
+  max-width: 95%;
+  padding: 20px;
+  border-radius: var(--radius-6); /* Rounded corners for a modern look */
+  box-shadow: var(--shadow-3);
+}
+
+.hero-form .email-field {
+  background-color: #9d9c9c34; /* Soft gray for the input field */
+  color: var(--charcoal);
+  min-height: 70px;
+  padding-inline: 20px;
+  border-radius: var(--radius-4);
+  margin-block-end: 15px;
+  border: 1px solid var(--light-gray); /* Subtle border for definition */
+}
+
+.hero-form .btn {
+  width: 100%;
+  background-image: var(--gradient); /* Gradient for the button */
+  color: var(--charcoal);
+  font-weight: var(--fw-600);
+  transition: var(--transition);
+}
+
+.hero-form .btn:is(:hover, :focus) {
+  background-image: linear-gradient(90deg, var(--light-pink) 0%, var(--light-yellow) 100%);
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+/*-----------------------------------*\
+  #SERVICE
+\*-----------------------------------*/
+
+.service {
+  padding-block-end: 0;
+  background-color: #f9f0e1; /* Light background for contrast */
+}
+
+.service .section-title {
+  margin-block-end: 50px;
+  color: var(--dark-blue); /* Dark blue for consistency */
+}
+
+.service-list {
+  display: grid;
+  gap: 20px;
+}
+
+.service-card {
+  height: 170px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 25px;
+  background-color: #35544734;
+  border-radius: var(--radius-6);
+  box-shadow: var(--shadow-2);
+  transition: var(--transition);
+}
+
+.service-card:is(:hover, :focus-within) {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: var(--shadow-4);
+}
+
+.service-card .card-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: var(--radius-4);
+}
+
+.service-card .card-icon img {
+  width: 30px;
+  height: 30px;
+}
+
+.service-card .card-title {
+  color: var(--dark-blue);
+  font-size: var(--fs-5);
+  margin-block-end: 10px;
+}
+
+.service-card .card-text {
+  color: var(--charcoal);
+  font-size: var(--fs-7);
+  line-height: 1.6;
+}
+
+/*-----------------------------------*\
+  #ABOUT
+\*-----------------------------------*/
+
+.about {
+  padding-block-end: 0;
+  background-color: #f9f0e1; 
+}
+
+.about-banner { margin-block-end: 50px; }
+
+.about .section-title {
+  color: var(--dark-blue);
+  margin-block-end: 20px;
+}
+
+.about .section-text {
+  color: var(--charcoal);
+  line-height: 1.7;
+  margin-block-end: 30px;
+}
+
+.about .btn {
+  background-image: var(--gradient);
+  color: var(--charcoal);
+  font-weight: var(--fw-600);
+  padding: 15px 30px;
+  border-radius: var(--radius-4);
+  transition: var(--transition);
+}
+
+.about .btn:is(:hover, :focus) {
+  background-image: linear-gradient(90deg, var(--light-pink) 0%, var(--light-yellow) 100%);
+  transform: translateY(-2px);
+}
+
+
+.ingredient-section, .recipe-section {
+  margin-bottom: 30px;
+}
+
+.ingredient-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.ingredient-card {
+  border: 1px solid var(--warm-gray);
+  border-radius: var(--radius-6);
+  padding: 25px;
+  text-align: center;
+  background-color: var(--off-white);
+  transition: var(--transition);
+  box-shadow: var(--shadow-2);
+}
+
+.ingredient-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-4);
+}
+
+.ingredient-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: var(--radius-6);
+}
+/* Container for the ingredient list */
+.ingredient-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* Style for each ingredient item */
+.ingredient-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: var(--off-white);
+  border-radius: var(--radius-6);
+  box-shadow: var(--shadow-2);
+  transition: var(--transition);
+}
+
+.ingredient-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-4);
+}
+
+/* Hide the default checkbox */
+.ingredient-item input[type="checkbox"] {
+  display: none;
+}
+
+/* Custom checkbox design */
+.ingredient-item label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--charcoal);
+}
+
+.ingredient-item label::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 2px solid var(--primary-green);
+  border-radius: var(--radius-4);
+  background-color: var(--off-white);
+  transition: var(--transition);
+}
+
+/* Checked state */
+.ingredient-item input[type="checkbox"]:checked + label::before {
+  background-color: var(--primary-green);
+  border-color: var(--primary-green);
+}
+
+/* Checkmark icon */
+.ingredient-item input[type="checkbox"]:checked + label::after {
+  content: '✔';
+  position: absolute;
+  left: 5px;
+  color: var(--off-white);
+  font-size: 14px;
+  transition: var(--transition);
+}
+
+/* Hover effect for the checkbox */
+.ingredient-item label:hover::before {
+  border-color: var(--dark-blue);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Optional: Add a ripple effect on click */
+.ingredient-item label:active::before {
+  transform: scale(0.9);
 }
 
 
