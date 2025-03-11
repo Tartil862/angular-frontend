@@ -74,7 +74,7 @@ export class UserService {
   }
 
   updateProfile(updatedUser: any): Observable<any> {
-    return this.http.put('http://localhost:8083/users/update', updatedUser);  // Adjust the endpoint as needed
+    return this.http.put('https://spring-backend-production-bbb4.up.railway.app/users/update', updatedUser);  // Adjust the endpoint as needed
   }
 
 }
